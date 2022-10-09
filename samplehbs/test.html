@@ -10,16 +10,28 @@
 </head>
 
 <body>
-  <script id="entry-template" type="text/x-handlebars-template"></script>
+  <script id="entry-template" type="text/x-handlebars-template">
   <div class="entry">
     <h1>{{title}}</h1>
     <div class="body">
       {{body}}
     </div>
   </div>
-  <div>
-    
-  </div>
+  </script>
+
+  <div id="result"></div>
+
+  <script>
+    var context = {
+      title: 'Title',
+      body: 'body!!'
+    };
+
+    var source = document.getElementById("entry-template").innerHTML;
+    var template = Handlebars.complile(source);
+    var html = template(context);
+    document.getElementById('result').innerHTML = html;
+  </script>
 </body>
 
 </html>
