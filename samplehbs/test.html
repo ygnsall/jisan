@@ -28,6 +28,7 @@
     };
 
     var source = document.getElementById("entry-template").innerHTML;
+    console.log("source>>", source)
     var template = Handlebars.complile(source);
     var html = template(context);
     console.log("html>>", html)
